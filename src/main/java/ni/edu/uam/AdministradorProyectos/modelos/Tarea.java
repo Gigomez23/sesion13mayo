@@ -1,5 +1,6 @@
 package ni.edu.uam.AdministradorProyectos.modelos;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,5 +35,6 @@ public class Tarea {
 
     @ManyToOne
     @JoinColumn(name = "proyecto_id", nullable = false)
+    @JsonBackReference
     private Proyecto proyecto;
 }
