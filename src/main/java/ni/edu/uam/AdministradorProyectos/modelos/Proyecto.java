@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -26,7 +28,7 @@ public class Proyecto {
     private String descripcion;
 
     @Column(name = "presupuesto_proyecto", nullable = true, precision = 10, scale = 2)
-    private double presupuesto;
+    private BigDecimal presupuesto;
 
     @OneToMany(mappedBy = "proyecto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Tarea> tareas;
